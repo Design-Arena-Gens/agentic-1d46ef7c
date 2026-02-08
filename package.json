@@ -1,0 +1,31 @@
+{
+  "name": "sircli",
+  "version": "1.0.0",
+  "description": "Advanced CLI for Termux with multi-AI provider support",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "sircli": "./bin/sircli.js"
+  },
+  "scripts": {
+    "start": "node bin/sircli.js",
+    "build": "mkdir -p public && cp -r public/* public/ 2>/dev/null || echo 'Build complete'",
+    "vercel-build": "mkdir -p public && echo 'Static site ready'",
+    "test": "echo \"Tests pending\" && exit 0"
+  },
+  "keywords": ["cli", "termux", "ai", "assistant"],
+  "author": "SirCLI",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "axios": "^1.6.2",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "inquirer": "^9.2.12",
+    "conf": "^12.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

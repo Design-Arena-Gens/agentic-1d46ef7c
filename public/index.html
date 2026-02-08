@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirCLI - Advanced AI-Powered CLI for Termux</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .terminal {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-button.red { background: #ff5f56; }
+        .terminal-button.yellow { background: #ffbd2e; }
+        .terminal-button.green { background: #27c93f; }
+
+        .terminal-content {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .terminal-line {
+            margin: 10px 0;
+        }
+
+        .prompt {
+            color: #4ec9b0;
+        }
+
+        .command {
+            color: #dcdcaa;
+        }
+
+        .output {
+            color: #ce9178;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .install-section {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .install-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        code {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            color: #dcdcaa;
+        }
+
+        .providers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .provider-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.8;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .github-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 SirCLI</h1>
+            <p class="tagline">The Evolution of All CLIs</p>
+            <p>Advanced AI-Powered Command-Line Interface for Termux</p>
+        </header>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-button red"></div>
+                <div class="terminal-button yellow"></div>
+                <div class="terminal-button green"></div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">$</span> <span class="command">npm install -g sircli</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">$</span> <span class="command">sircli chat "Explain quantum computing"</span>
+                </div>
+                <div class="terminal-line output">
+                    🤖 Assistant: Quantum computing harnesses quantum mechanics principles...
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">$</span> <span class="command">sircli project "Todo app with React" -t web</span>
+                </div>
+                <div class="terminal-line output">
+                    ✨ Creating project...
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">$</span> <span class="command">sircli code "Create a REST API" -o server.js</span>
+                </div>
+                <div class="terminal-line output">
+                    📝 Generated Code...
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🤖 Multi-AI Support</h3>
+                <p>Access OpenAI, Anthropic, Google, OpenRouter, Groq, and more AI providers from one CLI</p>
+            </div>
+            <div class="feature">
+                <h3>💬 Interactive Chat</h3>
+                <p>Have natural conversations with AI models directly from your terminal</p>
+            </div>
+            <div class="feature">
+                <h3>📝 Code Generation</h3>
+                <p>Generate, modify, and improve code in any programming language with AI assistance</p>
+            </div>
+            <div class="feature">
+                <h3>🚀 Project Creation</h3>
+                <p>Create entire project structures from simple descriptions</p>
+            </div>
+            <div class="feature">
+                <h3>📁 File Operations</h3>
+                <p>Create, read, write, and manage files with simple commands</p>
+            </div>
+            <div class="feature">
+                <h3>🔍 Web Search</h3>
+                <p>Search the internet and get results directly in your terminal</p>
+            </div>
+            <div class="feature">
+                <h3>⬇️ Download Manager</h3>
+                <p>Download files from URLs with progress tracking</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Command Execution</h3>
+                <p>Execute shell commands and scripts with enhanced output</p>
+            </div>
+            <div class="feature">
+                <h3>⚙️ Easy Configuration</h3>
+                <p>Simple API key management and customizable settings</p>
+            </div>
+        </div>
+
+        <div class="install-section">
+            <h2>Quick Start</h2>
+            <div class="code-block">
+                <code># Install SirCLI<br>
+npm install -g sircli<br><br>
+# Configure your API key<br>
+sircli config set apiKeys.openai YOUR_API_KEY<br><br>
+# Start using SirCLI<br>
+sircli chat "Hello, world!"</code>
+            </div>
+        </div>
+
+        <div class="install-section">
+            <h2>Supported AI Providers</h2>
+            <div class="providers">
+                <div class="provider-badge">OpenAI</div>
+                <div class="provider-badge">Anthropic</div>
+                <div class="provider-badge">Google AI</div>
+                <div class="provider-badge">OpenRouter</div>
+                <div class="provider-badge">Groq</div>
+            </div>
+        </div>
+
+        <div class="install-section">
+            <h2>Perfect for Termux</h2>
+            <p style="margin-bottom: 20px;">SirCLI is designed to work perfectly on Termux without requiring root privileges. It's the ultimate AI assistant for your Android device.</p>
+            <div class="code-block">
+                <code># On Termux<br>
+pkg install nodejs<br>
+npm install -g sircli<br>
+sircli chat "Hello from Termux!"</code>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ for developers who love the command line</p>
+            <a href="#" class="github-link">View on GitHub</a>
+        </footer>
+    </div>
+</body>
+</html>
